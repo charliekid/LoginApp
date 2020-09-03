@@ -3,6 +3,8 @@ package com.example.loginapp;
 import org.junit.Test;
 import static org.junit.Assert.*;
 public class UserTest {
+
+
     private static final String[] USER_INFO = {"Jordan", "Doe", "JordanDoe1", "password1"};
     private static final String CORRECT_CONSTRUCTOR_TOSTRING = "username = JordanDoe1\n" +
             "first name = Jordan\n" +
@@ -32,8 +34,8 @@ public class UserTest {
     public void testGetters() {
         User user1 = new User(USER_INFO[0], USER_INFO[1], USER_INFO[2], USER_INFO[3]);
         assertEquals("Expected and actual DON'T match", USER_INFO[0], user1.getFirstName());
-        assertEquals("Expected and actual DON'T match", USER_INFO[0], user1.getLastName());
-        assertEquals("Expected and actual DON'T match", USER_INFO[0], user1.getUsername());
+        assertEquals("Expected and actual DON'T match", USER_INFO[1], user1.getLastName());
+        assertEquals("Expected and actual DON'T match", USER_INFO[2], user1.getUsername());
     }
 
 }

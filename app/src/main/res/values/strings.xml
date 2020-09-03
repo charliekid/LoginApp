@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">LoginApp</string>
+
+    <!--    Log in page Strings-->
+    <string name="usernameLabel">Username</string>
+    <string name="passwordLabel">Password</string>
+    <string name="loginLabel">Login</string>
+
 </resources>
