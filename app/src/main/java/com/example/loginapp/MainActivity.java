@@ -1,3 +1,8 @@
+/**
+ * Filename:    MainActivity.java
+ * Author:      Charlie Nguyen
+ * Hw:          WK02HW01 : Android Login and Landing Page
+ */
 package com.example.loginapp;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,8 +19,8 @@ public class MainActivity extends AppCompatActivity {
     EditText passwordEditText;
     Button loginButton;
 
-    User aUser = new User("din", "djarin", "din_djarin", "baby_yoda_ftw");
-
+    User aUser = new User("din", "djarin",
+                 "din_djarin", "baby_yoda_ftw");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,13 +35,17 @@ public class MainActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-                // check to see if any fields are empty
                 validateLogin(usernameEditText, passwordEditText);
             }
         });
     }
 
+    /**
+     * This method validates data input by a user. This will check if the fields are empty
+     * and will check to make sure both password and username are valid
+     * @param usernameEditText - EditText where users will enter their username
+     * @param passwordEditText - EditText where users will enter their password
+     */
     public void validateLogin(EditText usernameEditText, EditText passwordEditText) {
         // Checks to see if fields are empty
         if(usernameEditText.getText().toString().isEmpty() &&
@@ -56,9 +65,8 @@ public class MainActivity extends AppCompatActivity {
             if(username.equals(aUser.getUsername())) {
                 // check if the password is correct
                 if(password.equals(aUser.getPassword())) {
-                    // password matches we need to send the right landing page
-                    Intent intent = new Intent(MainActivity.this, LandingPage.class);
-                    intent.putExtra("username", username);
+                    // password matches we need to send the user to landing page
+                    Intent intent = LandingPage.getIntent(getApplicationContext(), username);
                     startActivity(intent);
                 } else {
                     // password does not match
@@ -68,7 +76,6 @@ public class MainActivity extends AppCompatActivity {
                 //Username does not exists
                 usernameEditText.setError("Username does not exists");
             }
-             // if the username does not exist in the database
         }
     }
 }

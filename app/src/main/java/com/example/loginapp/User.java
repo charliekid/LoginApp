@@ -1,15 +1,18 @@
+/**
+ * Filename:    User.java
+ * Author:      Charlie Nguyen
+ * Hw:          WK02HW01 : Android Login and Landing Page
+ */
+
 package com.example.loginapp;
-
-
-
 import java.util.Objects;
 
 public class User {
+
     private String firstName;
     private String lastName;
     private String username;
     private String password;
-
 
     /**
      * Constructor
