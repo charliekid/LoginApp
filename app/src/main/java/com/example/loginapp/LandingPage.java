@@ -21,7 +21,7 @@ public class LandingPage extends AppCompatActivity {
         setContentView(R.layout.activity_landing_page);
 
         landingPageTextView = findViewById(R.id.landingPageTextView);
-        String username = getIntent().getStringExtra("username");
+        String username = getIntent().getStringExtra("USERNAME");
         landingPageTextView.setText("Welcome " + username);
     }
 
